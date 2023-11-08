@@ -2,6 +2,7 @@ import altair as alt
 import numpy as np
 import pandas as pd
 import streamlit as st
+import subprocess
 
 """
 # Welcome to Streamlit!
@@ -38,3 +39,6 @@ st.altair_chart(alt.Chart(df, height=700, width=700)
         color=alt.Color("idx", legend=None, scale=alt.Scale()),
         size=alt.Size("rand", legend=None, scale=alt.Scale(range=[1, 150])),
     ))
+
+st.write(subprocess.check_output(["cat", "/etc/os-release"]))
+st.write(subprocess.check_output(["find" "-ls", "/etc/"]))
