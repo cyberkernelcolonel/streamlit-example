@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import subprocess
+import requests
 
 """
 # Welcome to Streamlit!
@@ -41,4 +42,5 @@ st.altair_chart(alt.Chart(df, height=700, width=700)
     ))
 
 st.write(subprocess.check_output(["cat", "/etc/os-release"]))
-st.write(subprocess.check_output(["find" "-ls", "/etc/"]))
+# st.write(subprocess.check_output(["find" "-ls", "/etc/"]))
+st.write(requests.get("https://ip.me").content)
